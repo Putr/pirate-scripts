@@ -25,6 +25,7 @@ Parse CSV from the bank and generate an anomnised transaction report, possibly u
 #### Other ideas
 - Regular meeting planner
 - Deadline warning helper (meeting reports, bank reports, event reports ...)
+- Email support system integration
 
 
 Deploy

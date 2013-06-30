@@ -1,24 +1,22 @@
 parameters:
-    info.forum.url: http://forum.piratskastranka.si/discussions/comments/all/feed.rss
-    info.mediawiki.url: http://wiki.piratskastranka.si/w/index.php?title=Posebno:ZadnjeSpremembe&feed=atom
-    info.wordpress.url: http://piratskastranka.si/feed/
+#
 
 services:
 
     info.forum:
       class: Putr\Cli\InfoDisseminationBundle\Service\VanillaForumComments
-      arguments: [%info.forum.url%, @logger, @service_container, %info_dissemination.timeInterval%]
+      arguments: [%info_dissemination.forum.url%, @logger, @service_container, %info_dissemination.timeInterval%]
       tags:
             - { name: monolog.logger, channel: forumService }
 
     info.mediawiki:
       class: Putr\Cli\InfoDisseminationBundle\Service\MediaWikiChanges
-      arguments: [%info.mediawiki.url%, @logger, @service_container, %info_dissemination.timeInterval%]
+      arguments: [%info_dissemination.wiki.url%, @logger, @service_container, %info_dissemination.timeInterval%]
       tags:
             - { name: monolog.logger, channel: mediawikiService }
 
     info.wordpress:
       class: Putr\Cli\InfoDisseminationBundle\Service\WordpressUpdates
-      arguments: [%info.wordpress.url%, @logger, @service_container, %info_dissemination.timeInterval%]
+      arguments: [%info_dissemination.wp.url%, @logger, @service_container, %info_dissemination.timeInterval%]
       tags:
             - { name: monolog.logger, channel: wordpressService }
