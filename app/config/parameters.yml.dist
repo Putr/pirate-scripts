@@ -17,3 +17,8 @@ parameters:
     info_dissemination.system_email: ~
     info_dissemination.to_email: ~
     info_dissemination.timeInterval: 86400
+
+    info_dissemination.forum.url: http://forum.piratskastranka.si/discussions/comments/all/feed.rss
+    info_dissemination.wiki.url: http://wiki.piratskastranka.si/w/index.php?title=Posebno:ZadnjeSpremembe&feed=atom
+    info_dissemination.wp.url: http://piratskastranka.si/feed/
+
