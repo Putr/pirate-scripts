@@ -1,0 +1,17 @@
+<p>Pozdravljeni!</p>
+
+</p>Na forumu se dogaja!</p>
+
+<div>
+{% for forumThread in forum %}
+<p><strong>{{ forumThread.title }}</strong><p>
+<div>
+	{% for comment in forumThread.comments %}
+		<p>{{comment.text}}</p>
+		<p>{{comment.author}}</p>
+		<p>{{comment.link}}</p>
+	{% endfor %}
+</div>
+{% endfor %}
+</div>
+

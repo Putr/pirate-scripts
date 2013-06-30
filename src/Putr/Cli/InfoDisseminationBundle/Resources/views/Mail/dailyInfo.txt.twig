@@ -1,0 +1,52 @@
+Pozdravljeni!
+
+{% if wordpress %}
+## Nove objave na spletni strani!
+
+{% for wordpressEntry in wordpress %}
+* {{ wordpressEntry.title }}
+{% if wordpressEntry.comments_num == 1 %}
+Imamo že en komentar!
+{% elseif wordpressEntry.comments_num == 2 %}
+Imamo že dva komentarja.
+{% elseif wordpressEntry.comments_num >= 3 %}
+Imamo že {{wordpressEntry.comments_num}} komentarjev!
+{% endif %}
+{{ wordpressEntry.link }}
+{% endfor %}
+
+{% endif %}
+{% if forum %}
+## Novo dogajanje na forumu!
+
+{% for forumThread in forum %}
+* {{ forumThread.title }}
+{% if forumThread.commentsTotal == 1 %}
+Eno novo sporočilo.
+{% elseif forumThread.commentsTotal == 2 %}
+Dve novi sporočili.
+{% else %}
+Vneta debata! Kar {{forumThread.commentsTotal}} nova sporočil.
+{% endif %}
+{{forumThread.link}}
+
+{% endfor %}
+{% endif %}
+{% if wiki %}
+## Posodobitve na javnem Wikiju!
+
+{% for wikiEntry in wiki %}
+* {{ wikiEntry.title }} by {{ wikiEntry.author }}
+{{ wikiEntry.link }}
+
+{% endfor %}
+
+{% endif %}
+To obvestilo vam pošiljajo piratski hrčki. Na zalogi imajo še:
+* sezname novih objav na Piratskih idejah,
+* nove objave na uradni strani stranke na Facebooku in 
+* nove objave na twitterju. 
+
+V kolikor želite da dodajo še kaj od naštetega pošljite email na hrcki_so_zakon@piratskastranka.si
+
+DFTBA!
